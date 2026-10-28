@@ -7,7 +7,8 @@
 <meta name="description" content="A proposal for EvikNova.">
 <!--
   Dark proposal template. Order is deliberate:
-  audience -> impact -> how -> why now -> price -> how to start.
+  audience -> impact -> the work and the price -> how -> why now -> how to start.
+  Every deliverable carries its own price and its financial implication.
   Plain words, short sentences, no em dashes. Placeholders filled by gen_proposals.py.
 -->
 <style>
@@ -16,11 +17,10 @@
   :root{
     --bg:#12100a; --panel:#1b1811; --panel2:#221e15;
     --ink:#f3ecdd; --body:#ded5c2; --muted:#a89e8b; --faint:#7d7462;
-    --line:rgba(243,236,221,.13); --line2:rgba(243,236,221,.22);
+    --line:rgba(243,236,221,.13); --line2:rgba(243,236,221,.24);
     --gold:#d9a441; --terra:#e0714a; --teal:#3aa392;
   }
   *{margin:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,sans-serif;
        font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
   ::selection{background:var(--gold);color:#12100a}
@@ -32,14 +32,25 @@
   .mono b{color:var(--ink);font-weight:600}
   .dot{color:var(--gold)}
 
-  .hero{padding:62px 0 38px}
+  .hero{padding:58px 0 34px}
   .kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);
-          font-weight:600;margin-bottom:20px}
+          font-weight:600;margin-bottom:18px}
   h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.035em;
-     color:var(--ink);font-size:clamp(36px,6.6vw,62px);line-height:1;margin-bottom:16px}
+     color:var(--ink);font-size:clamp(34px,6.2vw,58px);line-height:1;margin-bottom:14px}
   h1 .x{color:var(--gold)}
-  .lede{font-size:clamp(17px,2.1vw,20px);color:var(--body);max-width:58ch;margin-bottom:26px}
-  .prepared{border-top:1px solid var(--line);padding-top:15px;display:flex;gap:10px;
+  .lede{font-size:clamp(16.5px,2vw,19px);color:var(--body);max-width:58ch;margin-bottom:26px}
+
+  /* ROI block */
+  .roi{border:1px solid var(--gold);background:linear-gradient(180deg,rgba(217,164,65,.09),rgba(217,164,65,.02));
+       padding:22px 22px 20px}
+  .roi .lab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+            font-weight:600;margin-bottom:10px}
+  .roi .big{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);
+            letter-spacing:-.03em;line-height:1.14;font-size:clamp(20px,3.3vw,28px)}
+  .roi .big em{font-style:normal;color:var(--gold)}
+  .roi .math{margin-top:11px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+
+  .prepared{border-top:1px solid var(--line);padding-top:15px;margin-top:26px;display:flex;gap:10px;
             align-items:baseline;flex-wrap:wrap}
   .prepared .who{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink);font-size:15px}
   .prepared .role{font-size:12.5px;color:var(--faint)}
@@ -52,87 +63,113 @@
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion:reduce){.track{animation:none}}
 
-  /* personal note */
-  .note{padding:38px 0 6px}
-  .note p{font-size:16.5px;max-width:62ch;color:var(--body)}
-  .note p+p{margin-top:12px}
+  .note{padding:34px 0 4px}
+  .note p{font-size:16px;max-width:62ch;color:var(--body)}
+  .note p+p{margin-top:11px}
   .note .first{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink)}
 
-  section{padding:52px 0;border-top:1px solid var(--line)}
+  section{padding:48px 0;border-top:1px solid var(--line)}
   .no{font-size:10.5px;letter-spacing:.18em;color:var(--gold);font-weight:600;display:block;margin-bottom:9px}
   h2{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.03em;
-     font-size:clamp(25px,3.7vw,35px);line-height:1.08;margin-bottom:10px}
-  .sub{color:var(--muted);max-width:60ch;margin-bottom:26px}
+     font-size:clamp(24px,3.6vw,34px);line-height:1.08;margin-bottom:10px}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:24px}
 
-  /* audience beats */
-  .beat{border-top:1px solid var(--line);padding:17px 0;display:grid;grid-template-columns:34px 1fr;gap:14px}
+  .beat{border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:32px 1fr;gap:14px}
   .beat:last-child{border-bottom:1px solid var(--line)}
   .beat .n{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold);padding-top:3px}
   .beat h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);
            margin-bottom:4px;letter-spacing:-.01em}
-  .beat p{font-size:15px;color:var(--body)}
+  .beat p{font-size:14.8px;color:var(--body)}
 
-  /* impact rows */
   .impact{border-top:1px solid var(--line)}
-  .row{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
-  .row .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  .row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .row .tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
             color:var(--teal);padding-top:3px}
-  .row .what{font-family:'Space Grotesk',sans-serif;font-size:16.5px;font-weight:500;color:var(--ink);
+  .row .what{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:500;color:var(--ink);
              margin-bottom:3px;letter-spacing:-.01em}
-  .row p{font-size:15px;color:var(--muted)}
+  .row p{font-size:14.8px;color:var(--muted)}
+  .judged{margin-top:18px;font-size:14.5px;color:var(--muted)}
+  .judged b{color:var(--ink);font-weight:600}
 
-  /* how it works */
-  .step{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+  /* receipts */
+  .receipts{margin-top:26px;background:var(--panel);border:1px solid var(--line);padding:18px 20px}
+  .receipts .rl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+                font-weight:600;margin-bottom:12px}
+  .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 18px}
+  .chip b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;
+          color:var(--ink);letter-spacing:-.03em;line-height:1}
+  .chip span{display:block;font-size:12.5px;color:var(--muted);margin-top:5px}
+  .skills{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;
+          color:var(--faint);letter-spacing:.02em}
+
+  /* rate table */
+  table{width:100%;border-collapse:collapse}
+  thead th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+           font-weight:600;text-align:left;padding:0 0 10px;border-bottom:1px solid var(--line2)}
+  thead th:last-child{text-align:right}
+  tbody td{border-bottom:1px solid var(--line);padding:13px 0;vertical-align:top;font-size:14.5px}
+  tbody td:first-child{color:var(--ink);font-weight:500;padding-right:14px;width:34%}
+  tbody td:nth-child(2){color:var(--muted);font-size:13.5px;padding-right:16px}
+  tbody td:last-child{text-align:right;white-space:nowrap;font-family:'Space Grotesk',sans-serif;
+                      font-weight:600;color:var(--gold);font-size:14px;padding-left:8px}
+  .fine{font-size:12px;color:var(--faint);margin-top:12px}
+
+  /* package */
+  .pkg{margin-top:28px;border:1px solid var(--line2);background:var(--panel)}
+  .pkg .head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;
+             gap:12px;align-items:baseline;flex-wrap:wrap}
+  .pkg .head .t{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink);font-size:15px}
+  .pkg .head .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600}
+  .pkg ul{list-style:none;padding:8px 20px 4px}
+  .pkg li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;
+          border-bottom:1px solid var(--line);font-size:14px;color:var(--body)}
+  .pkg li:last-child{border-bottom:none}
+  .pkg li span:last-child{color:var(--muted);font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+  .pkg .total{padding:14px 20px 20px;border-top:1px solid var(--line);display:flex;
+              justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pkg .total .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+                   font-weight:600}
+  .pkg .total .amt{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.6vw,40px);font-weight:700;
+                   color:var(--ink);letter-spacing:-.04em;line-height:1}
+  .pkg .total .was{font-size:13px;color:var(--faint);text-decoration:line-through}
+  .pkg .total .save{font-size:12.5px;color:var(--teal);font-weight:500}
+
+  .step{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
   .step:last-child{border-bottom:1px solid var(--line)}
   .step .n{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--terra);padding-top:3px}
   .step h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
-  .step p{font-size:15px;color:var(--body)}
+  .step p{font-size:14.8px;color:var(--body)}
 
-  /* why now */
-  .now li{list-style:none;border-top:1px solid var(--line);padding:14px 0 14px 20px;position:relative;
-          font-size:15.5px;color:var(--body)}
+  .now li{list-style:none;border-top:1px solid var(--line);padding:13px 0 13px 20px;position:relative;
+          font-size:15px;color:var(--body)}
   .now li:last-child{border-bottom:1px solid var(--line)}
-  .now li::before{content:"→";position:absolute;left:0; color:var(--gold);font-size:13px;top:15px}
+  .now li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:13px;top:14px}
   .now b{color:var(--ink);font-weight:600}
 
-  /* price */
-  .price{background:var(--panel);border:1px solid var(--line2);padding:28px 24px}
-  .price .lab{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);
-              font-weight:600;margin-bottom:8px}
-  .price .amt{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,6vw,54px);font-weight:700;
-              letter-spacing:-.04em;line-height:1;color:var(--ink)}
-  .price .amt small{font-size:14px;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:6px}
-  .price ul{list-style:none;margin-top:16px;display:grid;gap:7px}
-  .price li{font-size:14.5px;color:var(--muted);padding-left:17px;position:relative}
-  .price li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:9px;top:5px}
-  .addon{margin-top:18px;border-top:1px dashed var(--line2);padding-top:14px;display:flex;
-         gap:10px;align-items:baseline;flex-wrap:wrap}
-  .addon .p{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--gold);font-size:20px}
-  .addon span.txt{font-size:14px;color:var(--muted)}
-
-  /* start */
-  .start ol{list-style:none;counter-reset:s;margin-bottom:24px}
-  .start ol li{counter-increment:s;border-top:1px solid var(--line);padding:13px 0 13px 34px;
-               position:relative;font-size:15.5px;color:var(--body)}
+  .start ol{list-style:none;counter-reset:s;margin-bottom:22px}
+  .start ol li{counter-increment:s;border-top:1px solid var(--line);padding:13px 0 13px 32px;
+               position:relative;font-size:15px;color:var(--body)}
   .start ol li:last-child{border-bottom:1px solid var(--line)}
   .start ol li::before{content:counter(s);position:absolute;left:0;top:13px;
                font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold)}
   .btn{display:inline-block;background:var(--gold);color:#12100a;text-decoration:none;
-       font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;
-       padding:14px 24px;transition:.16s ease}
+       font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;transition:.16s ease}
   .btn:hover{background:var(--ink)}
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2);margin-left:9px}
   .btn.ghost:hover{background:var(--panel2);border-color:var(--gold)}
-  .sig{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;font-size:13.5px;color:var(--muted)}
+  .sig{margin-top:28px;border-top:1px solid var(--line);padding-top:16px;font-size:13.5px;color:var(--muted)}
   .sig b{color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:500}
 
   footer{border-top:1px solid var(--line);padding:20px 0 32px}
   footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
   footer a:hover{color:var(--gold);border-color:var(--gold)}
-  @media(max-width:560px){
-    .hero{padding:42px 0 30px}
+
+  @media(max-width:600px){
+    .hero{padding:40px 0 28px}
     .row{grid-template-columns:1fr;gap:6px}
+    tbody td:first-child{width:44%}
+    tbody td:nth-child(2){display:none}
     .btn.ghost{margin-left:0;margin-top:9px}
   }
 </style>
@@ -148,6 +185,11 @@
   <div class="kicker">A proposal, made for one brand</div>
   <h1>EvikNova <span class="x">x</span> Prosperity</h1>
   <p class="lede">Nobody is searching for an AI workforce ecosystem yet. So the first job is not ads. It is explanation, and that is what I would do for you.</p>
+  <div class="roi">
+    <div class="lab">What this is worth to you</div>
+    <div class="big">I can help you turn <em>$1,500</em> into <em>$12,000</em> of recurring revenue.</div>
+    <div class="math">100 waitlist signups is the aim. If 5 of them become customers at $200 a month, that is $12,000 a year. The package is $1,500, once.</div>
+  </div>
   <div class="prepared">
     <span class="who">For Dr. Deborah Y. Ale</span>
     <span class="role">Founder, CEO and Chief Architect, EvikNova</span>
@@ -159,7 +201,7 @@
 <div class="note"><div class="wrap"><p class="first">Dr. Ale,</p>
   <p>I went through the site twice. The governance argument is the part most AI companies cannot make honestly,
   so I built this page around it.</p>
-  <p>It is short on purpose. Six sections, one price, one next step.</p></div></div>
+  <p>It is short on purpose. You can buy one piece, or the whole launch story.</p></div></div>
 
 <section><div class="wrap">
   <span class="no">01 · WHO YOU ARE TALKING TO</span>
@@ -177,43 +219,70 @@
   <div class="impact"><div class="row"><div class="tag">Acquisition</div><div><div class="what">Waitlist signups, per story</div><p>A tracked waitlist link on every piece. After two weeks you know which explanation converts and which one only sounded clever.</p></div></div>
     <div class="row"><div class="tag">Brand</div><div><div class="what">You become the careful one</div><p>In a market full of hype, the company that explains risk clearly is the one operators believe. That is your real advantage and it needs a voice.</p></div></div>
     <div class="row"><div class="tag">Reach</div><div><div class="what">Operators, not tech tourists</div><p>My audience is small business owners and young professionals who make buying calls. Smaller than a tech audience, far more likely to sign up.</p></div></div></div>
-  <p class="sub" style="margin:20px 0 0"><b style="color:var(--ink)">The number I would be judged on:</b> waitlist signups from the campaign. The same approach brought Utiva 595 leads in days.</p>
+  <p class="judged"><b>The number I would be judged on:</b> waitlist signups from the campaign. The same approach brought Utiva 595 leads in days.</p>
+  <div class="receipts">
+    <div class="rl">Receipts, not promises</div>
+    <div class="chips"><div class="chip"><b>595</b><span>leads in days for Utiva</span></div>
+      <div class="chip"><b>60k+</b><span>people following the work</span></div>
+      <div class="chip"><b>15k+</b><span>newsletter readers</span></div></div>
+    <div class="skills">Worked with Utiva, SevenUp, PaveHQ and Africa Startup Festival. Organised TEDxJibowu at 17 (300k+ views). What I actually do: strategy, copy, video, community distribution, reporting.</div>
+  </div>
 </div></section>
 
 <section><div class="wrap">
-  <span class="no">03 · HOW I DO IT</span>
-  <h2>Exactly what happens</h2>
+  <span class="no">03 · THE WORK, AND WHAT EACH PART COSTS</span>
+  <h2>Pick the pieces, or take the package</h2>
+  <p class="sub">Each line has its own price. Most pre launch teams start with one explainer, then add the rest once the first one proves the message.</p>
+  <table>
+    <thead><tr><th>Deliverable</th><th>What it does for you</th><th>Price</th></tr></thead>
+    <tbody><tr><td>Written explainer, per piece</td><td>One use case in plain language, for someone who has never heard of the category.</td><td>$350</td></tr>
+      <tr><td>Short video, per video</td><td>The same explanation in 40 seconds, built for LinkedIn.</td><td>$200</td></tr>
+      <tr><td>Governance deep dive</td><td>The compliance story, written for the person who signs the contract.</td><td>$350</td></tr>
+      <tr><td>Community and newsletter activation</td><td>Distribution into operator groups and my 15k newsletter.</td><td>$400</td></tr>
+      <tr><td>Report and next-step plan</td><td>Waitlist signups per piece, so you know which story converts.</td><td>$150</td></tr>
+      <tr><td>Podcast sponsorship mention</td><td>Your brand spoken inside an episode, plus a link in the show notes.</td><td>+$100</td></tr>
+      <tr><td>Full podcast episode feature</td><td>A whole episode around your story, with you or one of your customers.</td><td>$400</td></tr></tbody>
+  </table>
+  <p class="fine">Prices are per item, in USD. You can buy one piece and stop. Nothing here needs a retainer.</p>
+  <div class="pkg">
+    <div class="head">
+      <span class="t">The launch story</span>
+      <span class="n">Recommended for EvikNova</span>
+    </div>
+    <ul><li><span>Three written pieces (two explainers, one governance deep dive)</span><span>$1,050</span></li>
+      <li><span>Two short videos</span><span>$400</span></li>
+      <li><span>Community and newsletter activation</span><span>$400</span></li>
+      <li><span>Report and next-step plan</span><span>$150</span></li></ul>
+    <div class="total">
+      <div>
+        <div class="lbl">Bought separately</div>
+        <div class="was">$2,000</div>
+      </div>
+      <div style="text-align:right">
+        <div class="lbl">Package price</div>
+        <div class="amt">$1,500</div>
+        <div class="save">You save $500, and the three pieces build on each other</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">04 · HOW I DO IT</span>
+  <h2>Exactly what happens, week by week</h2>
   <p class="sub">Four steps, three weeks. You approve at two points and I handle the rest.</p>
   <div class="step"><div class="n">01</div><div><h3>Week 1: I learn the product</h3><p>One call with you, plus time in the demo. I need to understand what the agent actually does before I explain it to anyone.</p></div></div>
-  <div class="step"><div class="n">02</div><div><h3>Week 2: I make three explainers</h3><p>Each one takes a single use case and shows it doing a real job for a real business. Written piece plus vertical video, in plain language.</p></div></div>
+  <div class="step"><div class="n">02</div><div><h3>Week 2: I make the pieces</h3><p>Two explainers and the governance deep dive, plus two short videos cut from them. Plain language, no jargon, no rocket emojis.</p></div></div>
   <div class="step"><div class="n">03</div><div><h3>Week 2: you approve</h3><p>Nothing goes live without your sign off, especially anything that touches a compliance claim.</p></div></div>
   <div class="step"><div class="n">04</div><div><h3>Week 3: I publish and report</h3><p>Distribution into my operator communities, then a report: signups per piece, and the two angles I would double down on.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
-  <span class="no">04 · WHY NOW</span>
+  <span class="no">05 · WHY NOW</span>
   <h2>Why this month and not next</h2>
   <ul class="now"><li><b>You are hiring your first creator marketer.</b> That hire takes months to produce anything. This starts now and gives them a playbook on day one.</li>
     <li><b>Pre launch is the only time explanation is free.</b> After launch, every competitor's version of the category is already sitting in your buyer's head.</li>
     <li><b>The category is being named right now.</b> Whoever explains it simply, first, gets quoted for years.</li></ul>
-</div></section>
-
-<section><div class="wrap">
-  <span class="no">05 · WHAT IT COSTS</span>
-  <h2>One price, no retainer</h2>
-  <p class="sub">Agreed before anything starts. No monthly invoice, no surprise lines.</p>
-  <div class="price">
-    <div class="lab">The price</div>
-    <div class="amt">$1,200 <small>for the full package</small></div>
-    <ul><li>Three explainer pieces, written and on video</li>
-      <li>Distribution into my operator and business communities</li>
-      <li>Tracked waitlist links and a report at the end</li>
-      <li>One round of changes. No retainer, no monthly invoice</li></ul>
-    <div class="addon">
-      <span class="p">+ $100</span>
-      <span class="txt">Optional: your brand becomes a sponsor of my podcast. One spoken feature in an episode, plus a link in the show notes.</span>
-    </div>
-  </div>
 </div></section>
 
 <section class="start"><div class="wrap">
