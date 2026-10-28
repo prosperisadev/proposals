@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNICAF x Prosperity Olorunfemi</title>
+<meta name="description" content="A proposal for UNICAF.">
+<!--
+  Dark proposal template. Order is deliberate:
+  audience -> impact -> the work and the price -> how -> why now -> how to start.
+  Every deliverable carries its own price and its financial implication.
+  Plain words, short sentences, no em dashes. Placeholders filled by gen_proposals.py.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#12100a; --panel:#1b1811; --panel2:#221e15;
+    --ink:#f3ecdd; --body:#ded5c2; --muted:#a89e8b; --faint:#7d7462;
+    --line:rgba(243,236,221,.13); --line2:rgba(243,236,221,.24);
+    --gold:#d9a441; --terra:#e0714a; --teal:#3aa392;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,sans-serif;
+       font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#12100a}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+  .top{border-bottom:1px solid var(--line);padding:15px 0}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .mono{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  .mono b{color:var(--ink);font-weight:600}
+  .dot{color:var(--gold)}
+
+  .hero{padding:58px 0 34px}
+  .kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);
+          font-weight:600;margin-bottom:18px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.035em;
+     color:var(--ink);font-size:clamp(34px,6.2vw,58px);line-height:1;margin-bottom:14px}
+  h1 .x{color:var(--gold)}
+  .lede{font-size:clamp(16.5px,2vw,19px);color:var(--body);max-width:58ch;margin-bottom:26px}
+
+  /* ROI block */
+  .roi{border:1px solid var(--gold);background:linear-gradient(180deg,rgba(217,164,65,.09),rgba(217,164,65,.02));
+       padding:22px 22px 20px}
+  .roi .lab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+            font-weight:600;margin-bottom:10px}
+  .roi .big{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);
+            letter-spacing:-.03em;line-height:1.14;font-size:clamp(20px,3.3vw,28px)}
+  .roi .big em{font-style:normal;color:var(--gold)}
+  .roi .math{margin-top:11px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+
+  .prepared{border-top:1px solid var(--line);padding-top:15px;margin-top:26px;display:flex;gap:10px;
+            align-items:baseline;flex-wrap:wrap}
+  .prepared .who{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink);font-size:15px}
+  .prepared .role{font-size:12.5px;color:var(--faint)}
+
+  .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+           background:var(--panel);padding:10px 0;white-space:nowrap}
+  .track{display:inline-block;animation:slide 36s linear infinite;font-family:'Space Grotesk',sans-serif;
+         font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .track i{color:var(--gold);font-style:normal;margin:0 15px}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+  .note{padding:34px 0 4px}
+  .note p{font-size:16px;max-width:62ch;color:var(--body)}
+  .note p+p{margin-top:11px}
+  .note .first{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink)}
+
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  .no{font-size:10.5px;letter-spacing:.18em;color:var(--gold);font-weight:600;display:block;margin-bottom:9px}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.03em;
+     font-size:clamp(24px,3.6vw,34px);line-height:1.08;margin-bottom:10px}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:24px}
+
+  .beat{border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:32px 1fr;gap:14px}
+  .beat:last-child{border-bottom:1px solid var(--line)}
+  .beat .n{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold);padding-top:3px}
+  .beat h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);
+           margin-bottom:4px;letter-spacing:-.01em}
+  .beat p{font-size:14.8px;color:var(--body)}
+
+  .impact{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .row .tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+            color:var(--teal);padding-top:3px}
+  .row .what{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:500;color:var(--ink);
+             margin-bottom:3px;letter-spacing:-.01em}
+  .row p{font-size:14.8px;color:var(--muted)}
+  .judged{margin-top:18px;font-size:14.5px;color:var(--muted)}
+  .judged b{color:var(--ink);font-weight:600}
+
+  /* receipts */
+  .receipts{margin-top:26px;background:var(--panel);border:1px solid var(--line);padding:18px 20px}
+  .receipts .rl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+                font-weight:600;margin-bottom:12px}
+  .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 18px}
+  .chip b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;
+          color:var(--ink);letter-spacing:-.03em;line-height:1}
+  .chip span{display:block;font-size:12.5px;color:var(--muted);margin-top:5px}
+  .skills{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;
+          color:var(--faint);letter-spacing:.02em}
+
+  /* rate table */
+  table{width:100%;border-collapse:collapse}
+  thead th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+           font-weight:600;text-align:left;padding:0 0 10px;border-bottom:1px solid var(--line2)}
+  thead th:last-child{text-align:right}
+  tbody td{border-bottom:1px solid var(--line);padding:13px 0;vertical-align:top;font-size:14.5px}
+  tbody td:first-child{color:var(--ink);font-weight:500;padding-right:14px;width:34%}
+  tbody td:nth-child(2){color:var(--muted);font-size:13.5px;padding-right:16px}
+  tbody td:last-child{text-align:right;white-space:nowrap;font-family:'Space Grotesk',sans-serif;
+                      font-weight:600;color:var(--gold);font-size:14px;padding-left:8px}
+  .fine{font-size:12px;color:var(--faint);margin-top:12px}
+
+  /* package */
+  .pkg{margin-top:28px;border:1px solid var(--line2);background:var(--panel)}
+  .pkg .head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;
+             gap:12px;align-items:baseline;flex-wrap:wrap}
+  .pkg .head .t{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink);font-size:15px}
+  .pkg .head .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600}
+  .pkg ul{list-style:none;padding:8px 20px 4px}
+  .pkg li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;
+          border-bottom:1px solid var(--line);font-size:14px;color:var(--body)}
+  .pkg li:last-child{border-bottom:none}
+  .pkg li span:last-child{color:var(--muted);font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+  .pkg .total{padding:14px 20px 20px;border-top:1px solid var(--line);display:flex;
+              justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pkg .total .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+                   font-weight:600}
+  .pkg .total .amt{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.6vw,40px);font-weight:700;
+                   color:var(--ink);letter-spacing:-.04em;line-height:1}
+  .pkg .total .was{font-size:13px;color:var(--faint);text-decoration:line-through}
+  .pkg .total .save{font-size:12.5px;color:var(--teal);font-weight:500}
+
+  .step{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .n{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--terra);padding-top:3px}
+  .step h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .step p{font-size:14.8px;color:var(--body)}
+
+  .now li{list-style:none;border-top:1px solid var(--line);padding:13px 0 13px 20px;position:relative;
+          font-size:15px;color:var(--body)}
+  .now li:last-child{border-bottom:1px solid var(--line)}
+  .now li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:13px;top:14px}
+  .now b{color:var(--ink);font-weight:600}
+
+  .start ol{list-style:none;counter-reset:s;margin-bottom:22px}
+  .start ol li{counter-increment:s;border-top:1px solid var(--line);padding:13px 0 13px 32px;
+               position:relative;font-size:15px;color:var(--body)}
+  .start ol li:last-child{border-bottom:1px solid var(--line)}
+  .start ol li::before{content:counter(s);position:absolute;left:0;top:13px;
+               font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold)}
+  .btn{display:inline-block;background:var(--gold);color:#12100a;text-decoration:none;
+       font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;transition:.16s ease}
+  .btn:hover{background:var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2);margin-left:9px}
+  .btn.ghost:hover{background:var(--panel2);border-color:var(--gold)}
+  .sig{margin-top:28px;border-top:1px solid var(--line);padding-top:16px;font-size:13.5px;color:var(--muted)}
+  .sig b{color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:500}
+
+  footer{border-top:1px solid var(--line);padding:20px 0 32px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+
+  @media(max-width:600px){
+    .hero{padding:40px 0 28px}
+    .row{grid-template-columns:1fr;gap:6px}
+    tbody td:first-child{width:44%}
+    tbody td:nth-child(2){display:none}
+    .btn.ghost{margin-left:0;margin-top:9px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="mono"><b>Prosperity Olorunfemi</b> <span class="dot">✦</span> content for brands</div>
+  <div class="mono">28 October 2026</div>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="kicker">A proposal, made for one brand</div>
+  <h1>UNICAF <span class="x">x</span> Prosperity</h1>
+  <p class="lede">UNICAF is hiring for creator work, which means there is budget and a mandate. The question is who turns it into content that actually sells.</p>
+  <div class="roi">
+    <div class="lab">What this is worth to you</div>
+    <div class="big">I can help you reach <em>60,000+</em> people for less than <em>$1,700</em>.</div>
+    <div class="math">My audience is 60k+ followers and 15k+ newsletter readers. The package is $1,700, once.</div>
+  </div>
+  <div class="prepared">
+    <span class="who">For the team</span>
+    <span class="role">UNICAF</span>
+  </div>
+</div></div>
+
+<div class="marquee"><div class="track">UNICAF <i>✦</i> content <i>✦</i> storytelling <i>✦</i> Lagos <i>✦</i> UNICAF <i>✦</i> content <i>✦</i> storytelling <i>✦</i> Lagos <i>✦</i> UNICAF <i>✦</i> content <i>✦</i> storytelling <i>✦</i> Lagos <i>✦</i></div></div>
+
+<div class="note"><div class="wrap"><p class="first">there,</p>
+  <p>I read about UNICAF before writing this. UNICAF works in Education.</p>
+  <p>Short page, six sections, one price. If it is not useful, ignore it.</p></div></div>
+
+<section><div class="wrap">
+  <span class="no">01 · WHO YOU ARE TALKING TO</span>
+  <h2>Who UNICAF is actually talking to</h2>
+  <p class="sub">The person who buys is not the person who likes the post. The page has to speak to the buyer.</p>
+  <div class="beat"><div class="n">01</div><div><h3>The buyer</h3><p>Education decision maker. remote</p></div></div>
+  <div class="beat"><div class="n">02</div><div><h3>What stops them</h3><p>They have seen content that looked good and changed nothing. They need proof, not polish.</p></div></div>
+  <div class="beat"><div class="n">03</div><div><h3>Where they decide</h3><p>LinkedIn, founder newsletters and people they already trust. Almost never an ad.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">02 · WHAT THIS DOES FOR YOU</span>
+  <h2>What this gets you</h2>
+  <p class="sub">Three outcomes you can point at, not impressions for the sake of it.</p>
+  <div class="impact"><div class="row"><div class="tag">Acquisition</div><div><div class="what">Leads you can count</div><p>Every piece carries a tracked link, so you see which story brought the enquiry.</p></div></div>
+    <div class="row"><div class="tag">Brand</div><div><div class="what">A voice, not a feed</div><p>The story makes your category legible. That is what shortens the sales call.</p></div></div>
+    <div class="row"><div class="tag">Reach</div><div><div class="what">My audience, not a rented one</div><p>60k+ followers and 15k+ newsletter readers, mostly Nigerian professionals and business owners.</p></div></div></div>
+  <p class="judged"><b>The number I would be judged on:</b> leads and enquiries from the campaign. My last campaign pulled 595 leads in days for Utiva.</p>
+  <div class="receipts">
+    <div class="rl">Receipts, not promises</div>
+    <div class="chips"><div class="chip"><b>595</b><span>leads in days for Utiva</span></div>
+      <div class="chip"><b>60k+</b><span>people following the work</span></div>
+      <div class="chip"><b>15k+</b><span>newsletter readers</span></div></div>
+    <div class="skills">Worked with Utiva, SevenUp, PaveHQ and Africa Startup Festival. Organised TEDxJibowu at 17 (300k+ views). What I actually do: strategy, copy, video, community distribution, reporting.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">03 · THE WORK, AND WHAT EACH PART COSTS</span>
+  <h2>Pick the pieces, or take the package</h2>
+  <p class="sub">Each line has its own price, so you can buy one piece and stop. The package is the cheapest way to buy the whole thing.</p>
+  <table>
+    <thead><tr><th>Deliverable</th><th>What it does for you</th><th>Price</th></tr></thead>
+    <tbody><tr><td>Written story piece</td><td>One story, built around your customer and your moment.</td><td>$350</td></tr>
+      <tr><td>Short video, per video</td><td>Scripted, shot and edited for Instagram, LinkedIn and X.</td><td>$200</td></tr>
+      <tr><td>Interview piece</td><td>A real customer or founder talking. This is what converts.</td><td>$400</td></tr>
+      <tr><td>Case study</td><td>The work, the numbers and the lesson, written to be sent cold.</td><td>$700</td></tr>
+      <tr><td>Community and newsletter activation</td><td>Your story placed in front of my audience, not rented.</td><td>$400</td></tr>
+      <tr><td>Report and next-step plan</td><td>What worked, what it cost per result, what to do next.</td><td>$150</td></tr>
+      <tr><td>Playbook for your team</td><td>Repeatable steps your team can run without me.</td><td>$300</td></tr>
+      <tr><td>Podcast sponsorship mention</td><td>Your brand spoken inside an episode, plus show notes link.</td><td>+$100</td></tr>
+      <tr><td>Full podcast episode feature</td><td>A whole episode around your story.</td><td>$400</td></tr></tbody>
+  </table>
+  <p class="fine">Prices are per item, in USD. You can buy one piece and stop. Nothing here needs a retainer.</p>
+  <div class="pkg">
+    <div class="head">
+      <span class="t">The story package</span>
+      <span class="n">Recommended for UNICAF</span>
+    </div>
+    <ul><li><span>The written story</span><span>$350</span></li>
+      <li><span>Customer or founder interview</span><span>$400</span></li>
+      <li><span>Three short videos</span><span>$600</span></li>
+      <li><span>Community and newsletter activation</span><span>$400</span></li>
+      <li><span>Report and next-step plan</span><span>$150</span></li></ul>
+    <div class="total">
+      <div>
+        <div class="lbl">Bought separately</div>
+        <div class="was">$1,900</div>
+      </div>
+      <div style="text-align:right">
+        <div class="lbl">Package price</div>
+        <div class="amt">$1,700</div>
+        <div class="save">You save $200, and the pieces work as one story</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">04 · HOW I DO IT</span>
+  <h2>Exactly what happens, week by week</h2>
+  <p class="sub">Four steps, three weeks. You approve at two points and I handle the rest.</p>
+  <div class="step"><div class="n">01</div><div><h3>Week 1: I learn the story</h3><p>One 45 minute call, plus a look at what customers actually say. I come back with three angles and you pick one.</p></div></div>
+  <div class="step"><div class="n">02</div><div><h3>Week 2: I make it</h3><p>The written piece first, then the video and the cut downs. One narrative, so it does not scatter.</p></div></div>
+  <div class="step"><div class="n">03</div><div><h3>Week 2: you approve</h3><p>Everything comes to you before it goes live. One round of changes.</p></div></div>
+  <div class="step"><div class="n">04</div><div><h3>Week 3: I publish and report</h3><p>Distribution to my audience and the groups I am in, then a short report with the numbers.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">05 · WHY NOW</span>
+  <h2>Why this month and not next</h2>
+  <ul class="now"><li><b>UNICAF is hiring for creator work.</b> That is a mandate with a budget attached. The first campaign sets the tone.</li>
+    <li><b>Attention compounds.</b> The story you tell first is the one people repeat for you.</li>
+    <li><b>Waiting costs more later.</b> Every month the category gets noisier and the same story costs more to land.</li></ul>
+</div></section>
+
+<section class="start"><div class="wrap">
+  <span class="no">06 · HOW TO START</span>
+  <h2>Your move.</h2>
+  <p class="sub">Reply to this email with a yes, or book 20 minutes. Either works.</p>
+  <ol><li>You reply, or we talk for 20 minutes. Whichever is faster.</li>
+    <li>I send three angles and a start date within 48 hours.</li>
+    <li>You approve one angle, and the first draft is in your inbox 7 days later.</li></ol>
+  <a class="btn" href="https://calendly.com/prosperityolorunfemi">Book the 20 minute call ↗</a>
+  <a class="btn ghost" href="https://prosperityolorunfemi.vercel.app/">See my work ↗</a>
+  <div class="sig"><b>Prosperity Olorunfemi</b><br>Content and storytelling for brands. Lagos, Nigeria.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="mono">Written for UNICAF, not for everyone</span>
+  <span class="mono"><a href="https://prosperityolorunfemi.vercel.app/">portfolio</a> <span class="dot">✦</span> <a href="https://calendly.com/prosperityolorunfemi">calendly</a></span>
+</div></footer>
+
+</body>
+</html>
