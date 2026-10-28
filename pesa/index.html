@@ -3,102 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pesa × Prosperity Olorunfemi — a founding-partner proposal</title>
+<title>Pesa x Prosperity Olorunfemi</title>
+<meta name="description" content="A founding partner proposal for Pesa.">
 <!--
-  Per-brand proposal page template.
-  Placeholders are replaced by ZCode during deep research:
-    Pesa Cross-border money for people who refuse to be stopped by a border. A founding-partner proposal for the brand that turned one family's remittance problem into infrastructure for the diaspora. You started as Pesapeer: one Nigerian in Canada, one brother who needed school fees, one transfer that cost too much and could vanish. That story became a licensed business across Canada, the US, the UK and Australia, serving 25,000+ people who move money between the countries they live in and the ones they love. In March you opened your proprietary rails to other businesses. That is the real story: Pesa is no longer just an app you download — it is infrastructure other companies build on. Infrastructure is bought on trust, and trust is built by the humans you can see, not the API docs you can read.
-    I tell migration stories for a living — the money, the family, the quiet fear of being far away. My audience is largely Nigerian professionals and SME operators: exactly the people who send money home and the people who run businesses that need cross-border rails. I don't read a brand deck and write a caption. I sit with the story until it sounds like a person. <b>595 leads in days</b> for Utiva (edtech). <b>~30,000 impressions</b> on episode 1 of my podcast with high engagement. SME-community campaigns with <b>SevenUp and Lagos Business School</b>. TEDx organiser at 17 and 18. I optimise for the outcome, not the impression count. Funded / growing (NG or small intl) $350–$550
-    A three-piece narrative built around the borderless-nomad customer, ending in a measurable action — a Pesa signup or a partner enquiry. <li>Podcast feature: one long-form episode on the money stories behind migration (your customer, in their own words)</li>
-      <li>Three-part short-form arc cut from that episode — vertical video + written story, one narrative spine</li>
-      <li>One partner-facing asset: a case-study style post aimed at the businesses you want on your rails</li>
-      <li>Distribution to my SME and diaspora communities, plus a tracked CTA link so we both see what it did</li>
-      <li>Outcome report: reach, engagement, signups or enquiries attributed, and what I'd do next</li> https://calendly.com/prosperityolorunfemi 28 October 2026
-  Design mirrors prosperityolorunfemi.vercel.app: Space Grotesk headings,
-  Inter body, JetBrains Mono accents, chapter-based storytelling.
+  Proposal template. Design language copied from prosperityolorunfemi.vercel.app:
+  warm paper, gold and terracotta, Space Grotesk headlines, chapter flow, marquee strips.
+  Placeholders are filled by gen_proposals.py. No em dashes anywhere in the copy.
 -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap');
-  :root{--bg:#0e0e11;--card:#16161a;--line:#26262c;--ink:#e8e8e8;--dim:#9a9aa2;--accent:#c8f04b}
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --page:#f6f1e7; --panel:#efe8da; --ink:#1b1710; --fg:#241f16;
+    --muted:#5c5344; --faint:#8a7f6c; --line:rgba(27,23,16,.14);
+    --gold:#a87b17; --terra:#b94b24; --teal:#0d7f72;
+  }
   *{margin:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;max-width:760px;margin:0 auto;padding:48px 24px}
-  .kicker{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-  h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:12px 0 8px}
-  h1 .brand{color:var(--accent)}
-  h2{font-family:'Space Grotesk',sans-serif;font-size:20px;margin:0 0 12px}
-  .lede{color:var(--dim);font-size:17px;margin-bottom:40px}
-  .chapter{border-top:1px solid var(--line);padding:32px 0}
-  .chapter .no{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:12px}
-  p{margin:10px 0;color:#cfcfd4}
-  .proof{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;font-size:15px}
-  .proof b{color:var(--accent)}
-  ul.deliv{list-style:none;padding:0;margin:14px 0}
-  ul.deliv li{padding:8px 0 8px 26px;position:relative;border-bottom:1px dashed var(--line)}
-  ul.deliv li:before{content:'→';position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace}
-  .price{background:var(--card);border:1px solid var(--accent);border-radius:12px;padding:20px 22px;margin:18px 0}
-  .price .amt{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--accent)}
-  .price .note{color:var(--dim);font-size:13px;margin-top:6px}
-  .cta{display:inline-block;background:var(--accent);color:#0e0e11;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;margin:18px 0}
-  .footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--dim);font-size:13px}
-  .footer a{color:var(--ink)}
-  .sig{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--dim)}
+  html{scroll-behavior:smooth}
+  body{background:var(--page);color:var(--fg);font-family:Inter,system-ui,sans-serif;
+       font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:var(--page)}
+  .wrap{max-width:880px;margin:0 auto;padding:0 26px}
+
+  /* ---------- top bar ---------- */
+  .top{border-bottom:1px solid var(--line);padding:16px 0}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .mono{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  .top .mono b{color:var(--ink);font-weight:600}
+  .dot{color:var(--gold)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 40px}
+  .hero .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);
+                font-weight:600;margin-bottom:22px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.035em;
+     font-size:clamp(38px,7vw,68px);line-height:.98;margin-bottom:18px}
+  h1 .x{color:var(--gold)}
+  .hero .lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:60ch;margin-bottom:28px}
+  .prepared{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;
+            border-top:1px solid var(--line);padding-top:16px}
+  .prepared .who{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px}
+  .prepared .role{font-size:13px;color:var(--faint)}
+
+  /* ---------- marquee ---------- */
+  .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+           background:var(--panel);padding:11px 0;white-space:nowrap}
+  .track{display:inline-block;animation:slide 34s linear infinite;font-family:'Space Grotesk',sans-serif;
+         font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .track i{color:var(--gold);font-style:normal;margin:0 16px}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+  /* ---------- note ---------- */
+  .note{padding:44px 0 8px}
+  .note p{font-size:17px;max-width:64ch}
+  .note p+p{margin-top:14px}
+  .note .first{font-family:'Space Grotesk',sans-serif;font-weight:500}
+
+  /* ---------- chapters ---------- */
+  section.chapter{padding:54px 0;border-top:1px solid var(--line)}
+  .chapter .head{display:flex;gap:14px;align-items:baseline;margin-bottom:8px}
+  .chapter .no{font-size:11px;letter-spacing:.18em;color:var(--gold);font-weight:600}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,4vw,38px);
+     letter-spacing:-.03em;line-height:1.06;margin-bottom:10px}
+  .chapter .sub{color:var(--muted);max-width:58ch;margin-bottom:30px}
+
+  /* beats */
+  .beat{border-top:1px solid var(--line);padding:20px 0;display:grid;
+        grid-template-columns:54px 1fr;gap:18px}
+  .beat:last-child{border-bottom:1px solid var(--line)}
+  .beat .n{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--gold);
+           padding-top:4px}
+  .beat h3{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;
+           letter-spacing:-.01em;margin-bottom:5px}
+  .beat p{color:var(--muted);font-size:15.5px}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+         background:var(--line);border:1px solid var(--line);margin:26px 0 0}
+  .stat{background:var(--page);padding:20px 18px}
+  .stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;
+          letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .stat span{display:block;margin-top:7px;font-size:13px;color:var(--muted)}
+
+  /* deliverables */
+  ol.list{list-style:none;counter-reset:item;margin-top:4px}
+  ol.list li{counter-increment:item;border-top:1px solid var(--line);padding:16px 0 16px 44px;
+             position:relative;font-size:15.5px;color:var(--fg)}
+  ol.list li:last-child{border-bottom:1px solid var(--line)}
+  ol.list li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:16px;
+             font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--teal)}
+
+  /* price */
+  .price{background:var(--panel);border:1px solid var(--line);padding:30px 26px;margin-top:26px}
+  .price .lab{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);
+              font-weight:600;margin-bottom:10px}
+  .price .amt{font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,6vw,50px);font-weight:700;
+              letter-spacing:-.035em;line-height:1}
+  .price .amt small{font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted)}
+  .price ul{list-style:none;margin-top:18px;display:grid;gap:8px}
+  .price li{font-size:14.5px;color:var(--muted);padding-left:18px;position:relative}
+  .price li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:10px;top:4px}
+
+  /* cta */
+  .cta{padding:58px 0 64px}
+  .cta h2{margin-bottom:12px}
+  .cta p{color:var(--muted);max-width:52ch;margin-bottom:26px}
+  .btn{display:inline-block;background:var(--ink);color:var(--page);text-decoration:none;
+       font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;
+       padding:15px 26px;border:1px solid var(--ink);transition:.16s ease}
+  .btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink);margin-left:10px}
+  .btn.ghost:hover{background:var(--ink);color:var(--page)}
+  .sig{margin-top:34px;border-top:1px solid var(--line);padding-top:18px;font-size:14px;color:var(--muted)}
+  .sig b{color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:500}
+
+  footer{border-top:1px solid var(--line);padding:22px 0 34px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--ink);border-color:var(--gold)}
+  @media(max-width:560px){
+    .hero{padding:44px 0 32px}
+    .beat{grid-template-columns:36px 1fr;gap:12px}
+    .btn.ghost{margin-left:0;margin-top:10px}
+  }
 </style>
 </head>
 <body>
 
-  <div class="kicker">A founding-partner proposal · 28 October 2026</div>
-  <h1><span class="brand">Pesa</span> × Prosperity Olorunfemi</h1>
-  <p class="lede">Cross-border money for people who refuse to be stopped by a border. A founding-partner proposal for the brand that turned one family's remittance problem into infrastructure for the diaspora.</p>
+<div class="top"><div class="wrap">
+  <div class="mono"><b>Prosperity Olorunfemi</b> <span class="dot">✦</span> storytelling for brands</div>
+  <div class="mono">28 October 2026</div>
+</div></div>
 
-  <div class="chapter">
-    <span class="no">01 — your moment</span>
-    <h2>Where Pesa is right now</h2>
-    <p>You started as Pesapeer: one Nigerian in Canada, one brother who needed school fees, one transfer that cost too much and could vanish. That story became a licensed business across Canada, the US, the UK and Australia, serving 25,000+ people who move money between the countries they live in and the ones they love.</p>
-    <p>In March you opened your proprietary rails to other businesses. That is the real story: Pesa is no longer just an app you download — it is infrastructure other companies build on. Infrastructure is bought on trust, and trust is built by the humans you can see, not the API docs you can read.</p>
+<div class="hero"><div class="wrap">
+  <div class="kicker">A founding partner proposal</div>
+  <h1>Pesa <span class="x">x</span> Prosperity</h1>
+  <p class="lede">You started with one brother who needed school fees. Now other companies build on your rails. That story deserves better than a product page.</p>
+  <div class="prepared">
+    <span class="who">Prepared for Tolu Osho</span>
+    <span class="role">CEO and co-founder, Pesa</span>
   </div>
+</div></div>
 
-  <div class="chapter">
-    <span class="no">02 — why me, specifically</span>
-    <h2>I don't do promotions. I build outcomes.</h2>
-    <p>I tell migration stories for a living — the money, the family, the quiet fear of being far away. My audience is largely Nigerian professionals and SME operators: exactly the people who send money home and the people who run businesses that need cross-border rails. I don't read a brand deck and write a caption. I sit with the story until it sounds like a person.</p>
-    <div class="proof"><b>595 leads in days</b> for Utiva (edtech). <b>~30,000 impressions</b> on episode 1 of my podcast with high engagement. SME-community campaigns with <b>SevenUp and Lagos Business School</b>. TEDx organiser at 17 and 18. I optimise for the outcome, not the impression count.</div>
-  </div>
+<div class="marquee"><div class="track">Pesa <i>✦</i> storytelling <i>✦</i> podcast <i>✦</i> Lagos <i>✦</i> Pesa <i>✦</i> storytelling <i>✦</i> podcast <i>✦</i> Lagos <i>✦</i> Pesa <i>✦</i> storytelling <i>✦</i> podcast <i>✦</i> Lagos <i>✦</i> <i>✦</i></div></div>
 
-  <div class="chapter">
-    <span class="no">03 — the offer</span>
-    <h2>Funded / growing (NG or small intl)</h2>
-    <p>A three-piece narrative built around the borderless-nomad customer, ending in a measurable action — a Pesa signup or a partner enquiry.</p>
-    <ul class="deliv">
-      <li>Podcast feature: one long-form episode on the money stories behind migration (your customer, in their own words)</li>
-      <li>Three-part short-form arc cut from that episode — vertical video + written story, one narrative spine</li>
-      <li>One partner-facing asset: a case-study style post aimed at the businesses you want on your rails</li>
-      <li>Distribution to my SME and diaspora communities, plus a tracked CTA link so we both see what it did</li>
-      <li>Outcome report: reach, engagement, signups or enquiries attributed, and what I'd do next</li>
-    </ul>
-    <div class="price">
-      <span class="amt">$350–$550</span>
-      <div class="note">Founding-partner rate — I'm choosing my first 10 brand partners and locking this pricing for them. It rises after the ten.</div>
-    </div>
-  </div>
+<div class="note"><div class="wrap">
+  <p class="first">Tolu,</p>
+  <p>I read the TechCabal piece in March about Pesa opening its rails to other businesses. I have been thinking
+  about it since, because that is a different company from the app people download.</p>
+  <p>So this is not a media kit. It is one page about the story you now have to tell, and what I would do with it.</p>
+</div></div>
 
-  <div class="chapter">
-    <span class="no">04 — how we'd work</span>
-    <h2>From hello to outcomes in days, not months</h2>
-    <ul class="deliv">
-      <li>A 20-minute call — you tell me the one metric that matters</li>
-      <li>I send you a story angle within 48 hours, for your sign-off</li>
-      <li>We produce: content, podcast, video — narrative first, promotion second</li>
-      <li>Distribution + community activation (I bring SME communities I already work with)</li>
-      <li>You get an outcome report — leads, reach, engagement, what's next</li>
-    </ul>
-    <a class="cta" href="https://calendly.com/prosperityolorunfemi" target="_blank">Book a 20-minute call →</a>
-  </div>
+<section class="chapter"><div class="wrap">
+  <div class="head"><span class="no">CHAPTER 01</span></div>
+  <h2>Where you actually are</h2>
+  <p class="sub">You are not selling transfers any more. You are selling trust to companies that will move other people's money through you.</p>
+  <div class="beat"><div class="n">01</div><div><h3>The beginning is still your best asset</h3><p>One Nigerian in Canada, one brother who needed school fees, one transfer that cost too much. People repeat that story at dinner. It is worth more than any ad you can buy.</p></div></div>
+  <div class="beat"><div class="n">02</div><div><h3>March changed the category</h3><p>Opening your rails to other businesses moved Pesa from app to infrastructure. People who buy infrastructure read, compare, and ask who is behind it. Nobody signs a contract with an API doc.</p></div></div>
+  <div class="beat"><div class="n">03</div><div><h3>The person who decides is not on your app</h3><p>The fintech founder, the shop owner, the operations lead. They do not scroll for a payments partner. They listen to someone they trust, usually on a podcast or in a group chat.</p></div></div>
+</div></section>
 
-  <div class="footer">
-    <p>Prosperity Olorunfemi — creator, builder, learner, educator. Lagos, Nigeria.</p>
-    <p><a href="https://prosperityolorunfemi.vercel.app/">portfolio</a> · <a href="https://www.linkedin.com/in/prosperityolorunfemi/">LinkedIn</a> · <a href="https://calendly.com/prosperityolorunfemi">Calendly</a></p>
-    <p class="sig">This page was made for Pesa on 28 October 2026. If it's not relevant to you, no hard feelings — reply "not now" and I won't follow up.</p>
+<section class="chapter"><div class="wrap">
+  <div class="head"><span class="no">CHAPTER 02</span></div>
+  <h2>Why me, and not an agency</h2>
+  <p class="sub">I am not an agency with a deck and a junior account manager. I am one person who writes, shoots, edits and publishes the work. My audience is Nigerian professionals and business owners, the same people who send money home and the same people who would put their business on your rails.</p>
+  <div class="stats"><div class="stat"><b>595</b><span>leads in days for Utiva</span></div>
+    <div class="stat"><b>60k+</b><span>followers across platforms</span></div>
+    <div class="stat"><b>300k+</b><span>views on TEDxJibowu, organised at 17</span></div>
+    <div class="stat"><b>15k+</b><span>readers on my newsletter</span></div></div>
+</div></section>
+
+<section class="chapter"><div class="wrap">
+  <div class="head"><span class="no">CHAPTER 03</span></div>
+  <h2>What we would actually make</h2>
+  <p class="sub">A three part story about money that crosses borders, and the people who send it. Built to end in a signup or a partner enquiry, whichever you want more of.</p>
+  <ol class="list"><li>A podcast episode with you or with one of your customers. Long form and honest, the kind of conversation that makes someone trust a company before they download it.</li>
+    <li>Three short pieces cut from that episode. Vertical video plus written story, all one narrative, so the message does not scatter across platforms.</li>
+    <li>One piece aimed at businesses instead of consumers. A case study style post about what changes when a company plugs into your rails.</li>
+    <li>Distribution to my audience and into the business groups I am part of, with a tracked link so we both see what happened.</li>
+    <li>A short report at the end. Reach, engagement, signups or enquiries, and what I would do differently next time.</li></ol>
+</div></section>
+
+<section class="chapter"><div class="wrap">
+  <div class="head"><span class="no">CHAPTER 04</span></div>
+  <h2>The money, in plain words</h2>
+  <p class="sub">One number, agreed before anything starts. No retainer, no monthly invoice, no surprise line items.</p>
+  <div class="price">
+    <div class="lab">Founding partner rate</div>
+    <div class="amt">$350 to $550 <small>for this whole package</small></div>
+    <ul><li>The whole package above, start to finish</li>
+      <li>You see everything before it goes live, and you can ask for changes</li>
+      <li>Tracked links, so the result is measured and not guessed</li>
+      <li>Founding partner rate, because you would be one of my first ten brand partners</li></ul>
   </div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <div class="head" style="display:flex;gap:14px;align-items:baseline;margin-bottom:8px">
+    <span class="no" style="font-size:11px;letter-spacing:.18em;color:var(--gold);font-weight:600">CHAPTER 05</span>
+  </div>
+  <h2>Your move.</h2>
+  <p>Twenty minutes on a call. You tell me what the next quarter has to prove, I tell you honestly whether I am the right person for it. If I am not, I will say so.</p>
+  <a class="btn" href="https://calendly.com/prosperityolorunfemi">Book the call ↗</a>
+  <a class="btn ghost" href="https://prosperityolorunfemi.vercel.app/">See my work ↗</a>
+  <div class="sig">
+    <b>Prosperity Olorunfemi</b><br>
+    Creator, builder, host of the podcast. Lagos, Nigeria.
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="mono">Written for Pesa, not for everyone</span>
+  <span class="mono"><a href="https://prosperityolorunfemi.vercel.app/">portfolio</a> <span class="dot">✦</span> <a href="https://calendly.com/prosperityolorunfemi">calendly</a></span>
+</div></footer>
 
 </body>
 </html>
