@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gates Foundation x Prosperity Olorunfemi</title>
+<meta name="description" content="Why Prosperity Olorunfemi fits AI Fellow - Africa Regional Offices at Gates Foundation.">
+<!--
+  Opportunity page: the same look as the brand proposal, no price.
+  Order: the role, what they asked for and what I bring, receipts, how I work, next step.
+  Styles come from proposal-template.html so the two never drift apart.
+-->
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#12100a; --panel:#1b1811; --panel2:#221e15;
+    --ink:#f3ecdd; --body:#ded5c2; --muted:#a89e8b; --faint:#7d7462;
+    --line:rgba(243,236,221,.13); --line2:rgba(243,236,221,.24);
+    --gold:#d9a441; --terra:#e0714a; --teal:#3aa392;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,sans-serif;
+       font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#12100a}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+  .top{border-bottom:1px solid var(--line);padding:15px 0}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .mono{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  .mono b{color:var(--ink);font-weight:600}
+  .dot{color:var(--gold)}
+
+  .hero{padding:58px 0 34px}
+  .kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);
+          font-weight:600;margin-bottom:18px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.035em;
+     color:var(--ink);font-size:clamp(34px,6.2vw,58px);line-height:1;margin-bottom:14px}
+  h1 .x{color:var(--gold)}
+  .lede{font-size:clamp(16.5px,2vw,19px);color:var(--body);max-width:58ch;margin-bottom:26px}
+
+  /* ROI block */
+  .roi{border:1px solid var(--gold);background:linear-gradient(180deg,rgba(217,164,65,.09),rgba(217,164,65,.02));
+       padding:22px 22px 20px}
+  .roi .lab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+            font-weight:600;margin-bottom:10px}
+  .roi .big{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);
+            letter-spacing:-.03em;line-height:1.14;font-size:clamp(20px,3.3vw,28px)}
+  .roi .big em{font-style:normal;color:var(--gold)}
+  .roi .math{margin-top:11px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+
+  .prepared{border-top:1px solid var(--line);padding-top:15px;margin-top:26px;display:flex;gap:10px;
+            align-items:baseline;flex-wrap:wrap}
+  .prepared .who{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink);font-size:15px}
+  .prepared .role{font-size:12.5px;color:var(--faint)}
+
+  .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+           background:var(--panel);padding:10px 0;white-space:nowrap}
+  .track{display:inline-block;animation:slide 36s linear infinite;font-family:'Space Grotesk',sans-serif;
+         font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .track i{color:var(--gold);font-style:normal;margin:0 15px}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+  .note{padding:34px 0 4px}
+  .note p{font-size:16px;max-width:62ch;color:var(--body)}
+  .note p+p{margin-top:11px}
+  .note .first{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink)}
+
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  .no{font-size:10.5px;letter-spacing:.18em;color:var(--gold);font-weight:600;display:block;margin-bottom:9px}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.03em;
+     font-size:clamp(24px,3.6vw,34px);line-height:1.08;margin-bottom:10px}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:24px}
+
+  .beat{border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:32px 1fr;gap:14px}
+  .beat:last-child{border-bottom:1px solid var(--line)}
+  .beat .n{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold);padding-top:3px}
+  .beat h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);
+           margin-bottom:4px;letter-spacing:-.01em}
+  .beat p{font-size:14.8px;color:var(--body)}
+
+  .impact{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .row .tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+            color:var(--teal);padding-top:3px}
+  .row .what{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:500;color:var(--ink);
+             margin-bottom:3px;letter-spacing:-.01em}
+  .row p{font-size:14.8px;color:var(--muted)}
+  .judged{margin-top:18px;font-size:14.5px;color:var(--muted)}
+  .judged b{color:var(--ink);font-weight:600}
+
+  /* receipts */
+  .receipts{margin-top:26px;background:var(--panel);border:1px solid var(--line);padding:18px 20px}
+  .receipts .rl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+                font-weight:600;margin-bottom:12px}
+  .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 18px}
+  .chip b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;
+          color:var(--ink);letter-spacing:-.03em;line-height:1}
+  .chip span{display:block;font-size:12.5px;color:var(--muted);margin-top:5px}
+  .skills{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;
+          color:var(--faint);letter-spacing:.02em}
+
+  /* rate table */
+  table{width:100%;border-collapse:collapse}
+  thead th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+           font-weight:600;text-align:left;padding:0 0 10px;border-bottom:1px solid var(--line2)}
+  thead th:last-child{text-align:right}
+  tbody td{border-bottom:1px solid var(--line);padding:13px 0;vertical-align:top;font-size:14.5px}
+  tbody td:first-child{color:var(--ink);font-weight:500;padding-right:14px;width:34%}
+  tbody td:nth-child(2){color:var(--muted);font-size:13.5px;padding-right:16px}
+  tbody td:last-child{text-align:right;white-space:nowrap;font-family:'Space Grotesk',sans-serif;
+                      font-weight:600;color:var(--gold);font-size:14px;padding-left:8px}
+  .fine{font-size:12px;color:var(--faint);margin-top:12px}
+
+  /* package */
+  .pkg{margin-top:28px;border:1px solid var(--line2);background:var(--panel)}
+  .pkg .head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;
+             gap:12px;align-items:baseline;flex-wrap:wrap}
+  .pkg .head .t{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink);font-size:15px}
+  .pkg .head .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600}
+  .pkg ul{list-style:none;padding:8px 20px 4px}
+  .pkg li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;
+          border-bottom:1px solid var(--line);font-size:14px;color:var(--body)}
+  .pkg li:last-child{border-bottom:none}
+  .pkg li span:last-child{color:var(--muted);font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+  .pkg .total{padding:14px 20px 20px;border-top:1px solid var(--line);display:flex;
+              justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pkg .total .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+                   font-weight:600}
+  .pkg .total .amt{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.6vw,40px);font-weight:700;
+                   color:var(--ink);letter-spacing:-.04em;line-height:1}
+  .pkg .total .was{font-size:13px;color:var(--faint);text-decoration:line-through}
+  .pkg .total .save{font-size:12.5px;color:var(--teal);font-weight:500}
+
+  .step{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .n{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--terra);padding-top:3px}
+  .step h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .step p{font-size:14.8px;color:var(--body)}
+
+  .now li{list-style:none;border-top:1px solid var(--line);padding:13px 0 13px 20px;position:relative;
+          font-size:15px;color:var(--body)}
+  .now li:last-child{border-bottom:1px solid var(--line)}
+  .now li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:13px;top:14px}
+  .now b{color:var(--ink);font-weight:600}
+
+  .start ol{list-style:none;counter-reset:s;margin-bottom:22px}
+  .start ol li{counter-increment:s;border-top:1px solid var(--line);padding:13px 0 13px 32px;
+               position:relative;font-size:15px;color:var(--body)}
+  .start ol li:last-child{border-bottom:1px solid var(--line)}
+  .start ol li::before{content:counter(s);position:absolute;left:0;top:13px;
+               font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold)}
+  .btn{display:inline-block;background:var(--gold);color:#12100a;text-decoration:none;
+       font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;transition:.16s ease}
+  .btn:hover{background:var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2);margin-left:9px}
+  .btn.ghost:hover{background:var(--panel2);border-color:var(--gold)}
+  .sig{margin-top:28px;border-top:1px solid var(--line);padding-top:16px;font-size:13.5px;color:var(--muted)}
+  .sig b{color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:500}
+
+  footer{border-top:1px solid var(--line);padding:20px 0 32px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+
+  @media(max-width:600px){
+    .hero{padding:40px 0 28px}
+    .row{grid-template-columns:1fr;gap:6px}
+    tbody td:first-child{width:44%}
+    tbody td:nth-child(2){display:none}
+    .btn.ghost{margin-left:0;margin-top:9px}
+  }
+
+  .fit tbody td:first-child{width:38%}
+  .fit tbody td:last-child{text-align:left;white-space:normal;font-family:Inter,system-ui,sans-serif;
+                           font-weight:400;color:var(--body);font-size:14.5px;padding-left:0}
+  .fit .lbl{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);
+            font-weight:600;margin-bottom:3px}
+  .fit thead th:last-child{text-align:left}
+  @media(max-width:600px){
+    .fit tbody tr{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+    .fit tbody td{display:block;width:auto!important;border:none;padding:2px 0}
+    .fit tbody td:nth-child(2){display:block}
+    .fit thead{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="mono"><b>Prosperity Olorunfemi</b> <span class="dot">✦</span> an application note</div>
+  <div class="mono">03 November 2026</div>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="kicker">A note for one role, not a mass application</div>
+  <h1>Gates Foundation <span class="x">x</span> Prosperity</h1>
+  <p class="lede">Creator, builder and educator in Lagos. I explain hard things to real people, and I build the tools I use.</p>
+  <div class="roi">
+    <div class="lab">The role</div>
+    <div class="big">AI Fellow - Africa Regional Offices</div>
+    <div class="math">Nairobi, Kenya / Abuja, Nigeria · Full time · apply by November 11th · ref B021830</div>
+  </div>
+  <div class="prepared">
+    <span class="who">For the Gates Foundation team</span>
+    <span class="role">Gates Foundation</span>
+  </div>
+</div></div>
+
+<div class="marquee"><div class="track">Gates Foundation <i>✦</i> builder <i>✦</i> teacher <i>✦</i> storyteller <i>✦</i> Lagos <i>✦</i> Gates Foundation <i>✦</i> builder <i>✦</i> teacher <i>✦</i> storyteller <i>✦</i> Lagos <i>✦</i> Gates Foundation <i>✦</i> builder <i>✦</i> teacher <i>✦</i> storyteller <i>✦</i> Lagos <i>✦</i></div></div>
+
+<div class="note"><div class="wrap"><p class="first">Hello,</p>
+  <p>I am applying through the official portal as well. This page is the human version.</p>
+  <p>Below, each thing your posting asks for sits next to something I have already done. Where I have not done it yet, I have left it off rather than stretch.</p></div></div>
+
+<section><div class="wrap">
+  <span class="no">01 · WHAT YOU ASKED FOR, AND WHAT I BRING</span>
+  <h2>The fit, one ask at a time</h2>
+  <p class="sub">Each line on the left is from your own posting. Each line on the right is something I have already done.</p>
+  <table class="fit">
+    <thead><tr><th>You asked for</th><th>What I bring</th></tr></thead>
+    <tbody><tr><td><span class=lbl>Builder and Teacher Approach</span>Hands-on experience building prototypes with LLMs and other modern AI tools (e.g., using open-source tools or API-based platforms), with the judgment to connect AI components to the broader data and software systems needed for real-world…</td><td>I built Brand Radar, the Python system I run my outreach on: it reads job boards and news feeds, researches organisations, finds published contacts with source checks, and drafts email behind send guardrails. Built hands-on with AI coding agents and kept in git.</td></tr>
+      <tr><td><span class=lbl>Mission-Driven Ethos</span>Deep motivation to apply AI responsibly for public good, with alignment to equitable development and global health impact.</td><td>My work is African-first: Nigerian SMEs, students and young professionals are who I build and create for every week, so usability and adoption are the test I already work to.</td></tr>
+      <tr><td>Support internal AI literacy through, for instance, developing workshop sessions, guides, and playbooks to enable the Africa team to use LLM tools effectively in their own work.</td><td>I teach in rooms and online: CodeSpark sessions across 15 universities, and TEDx events I organised at 17 and 18 (300k+ YouTube views).</td></tr>
+      <tr><td>Collaborate with cross-functional teams across subject areas and geographies to co-design and deliver impactful solutions.</td><td>I deliver through partners: recurring work with Utiva, SevenUp and Lagos Business School, reaching SMEs through their communities. Utiva's last campaign drew 595 leads in days.</td></tr>
+      <tr><td><span class=lbl>Communication Skills</span>Demonstrated ability to clearly articulate technical concepts and recommendations to both technical and non-technical audiences.</td><td>I explain things for a living: 60k+ followers, a 15k+ newsletter, and a podcast whose first episode reached about 30,000 impressions.</td></tr></tbody>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">02 · RECEIPTS</span>
+  <h2>Things you can check</h2>
+  <div class="receipts" style="margin-top:6px">
+    <div class="rl">Receipts, not promises</div>
+    <div class="chips"><div class="chip"><b>60k+</b><span>people following the work</span></div>
+      <div class="chip"><b>15k+</b><span>newsletter readers</span></div>
+      <div class="chip"><b>595</b><span>leads in days for Utiva</span></div>
+      <div class="chip"><b>15</b><span>universities reached through CodeSpark</span></div></div>
+    <div class="skills">Worked with Utiva, SevenUp, PaveHQ, Lagos Business School and Africa Startup Festival. Organised TEDxJibowu at 17 (300k+ views). Built Brand Radar, the system that wrote this page.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="no">03 · HOW I WORK</span>
+  <h2>How I would show up</h2>
+  <p class="sub">The same way I run my own work, so you can check it against what I have already done.</p>
+  <div class="step"><div class="n">01</div><div><h3>Listen first</h3><p>I start with the people who will use the work, and what they already do, before anything gets built.</p></div></div>
+  <div class="step"><div class="n">02</div><div><h3>Build small, show early</h3><p>A rough version in days, in front of real users, so the next decision is made on evidence.</p></div></div>
+  <div class="step"><div class="n">03</div><div><h3>Explain it plainly</h3><p>Every piece of work comes with a write-up a non-specialist can act on.</p></div></div>
+  <div class="step"><div class="n">04</div><div><h3>Leave it teachable</h3><p>A guide or session so the team can run it without me.</p></div></div>
+</div></section>
+
+<section class="start"><div class="wrap">
+  <span class="no">04 · NEXT STEP</span>
+  <h2>Twenty minutes is enough.</h2>
+  <p class="sub">Reply to the email, or book a slot. Either works.</p>
+  <ol><li>You reply, or we talk for 20 minutes. Whichever is faster.</li>
+    <li>I answer anything the application form could not ask.</li>
+    <li>You decide with a person in mind, not only a CV.</li></ol>
+  <a class="btn" href="https://calendly.com/prosperityolorunfemi">Book 20 minutes ↗</a>
+  <a class="btn ghost" href="https://prosperityolorunfemi.vercel.app/">See my work ↗</a>
+  <a class="btn ghost" href="https://www.linkedin.com/in/prosperityolorunfemi/">LinkedIn ↗</a>
+  <div class="sig"><b>Prosperity Olorunfemi</b><br>Creator, builder and educator. Lagos, Nigeria.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="mono">Written for Gates Foundation, not for everyone</span>
+  <span class="mono"><a href="https://prosperityolorunfemi.vercel.app/">portfolio</a> <span class="dot">✦</span> <a href="https://calendly.com/prosperityolorunfemi">calendly</a></span>
+</div></footer>
+
+</body>
+</html>
